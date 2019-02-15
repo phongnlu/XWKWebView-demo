@@ -11,6 +11,12 @@
 		3EB2AD84221629A300C46394 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB2AD83221629A300C46394 /* ViewController.swift */; };
 		3EB2AD86221629A400C46394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2AD85221629A400C46394 /* Assets.xcassets */; };
 		3EB2AD89221629A400C46394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2AD87221629A400C46394 /* Main.storyboard */; };
+		3EB2ADAE22164A6600C46394 /* dummy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2ADAB22164A6600C46394 /* dummy.txt */; };
+		3EB2ADAF22164A6600C46394 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2ADAC22164A6600C46394 /* index.html */; };
+		3EB2ADB022164A6600C46394 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2ADAD22164A6600C46394 /* main.js */; };
+		3EB2ADB322164A9200C46394 /* LocalFilePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB2ADB222164A9200C46394 /* LocalFilePlugin.swift */; };
+		3EB2ADB622164AB600C46394 /* XWKWebView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB2ADB522164AB600C46394 /* XWKWebView.framework */; };
+		3EB2ADB922164B3D00C46394 /* AnotherPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB2ADB822164B3D00C46394 /* AnotherPlugin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +26,13 @@
 		3EB2AD85221629A400C46394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EB2AD88221629A400C46394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3EB2AD8A221629A400C46394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3EB2AD8B221629A400C46394 /* XWKWebViewDemo_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XWKWebViewDemo_macOS.entitlements; sourceTree = "<group>"; };
+		3EB2ADAB22164A6600C46394 /* dummy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dummy.txt; sourceTree = "<group>"; };
+		3EB2ADAC22164A6600C46394 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		3EB2ADAD22164A6600C46394 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		3EB2ADB222164A9200C46394 /* LocalFilePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFilePlugin.swift; sourceTree = "<group>"; };
+		3EB2ADB522164AB600C46394 /* XWKWebView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XWKWebView.framework; path = Carthage/Build/Mac/XWKWebView.framework; sourceTree = "<group>"; };
+		3EB2ADB822164B3D00C46394 /* AnotherPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherPlugin.swift; sourceTree = "<group>"; };
+		3EB2ADBC2216550100C46394 /* XWKWebViewDemo.macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XWKWebViewDemo.macOS.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EB2ADB622164AB600C46394 /* XWKWebView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +52,7 @@
 			children = (
 				3EB2AD80221629A300C46394 /* XWKWebViewDemo.macOS */,
 				3EB2AD7F221629A300C46394 /* Products */,
+				3EB2ADB422164AB600C46394 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,14 +67,43 @@
 		3EB2AD80221629A300C46394 /* XWKWebViewDemo.macOS */ = {
 			isa = PBXGroup;
 			children = (
+				3EB2ADBC2216550100C46394 /* XWKWebViewDemo.macOS.entitlements */,
+				3EB2ADB122164A7400C46394 /* Plugins */,
+				3EB2ADAA22164A3E00C46394 /* Supporting Files */,
 				3EB2AD81221629A300C46394 /* AppDelegate.swift */,
 				3EB2AD83221629A300C46394 /* ViewController.swift */,
 				3EB2AD85221629A400C46394 /* Assets.xcassets */,
 				3EB2AD87221629A400C46394 /* Main.storyboard */,
 				3EB2AD8A221629A400C46394 /* Info.plist */,
-				3EB2AD8B221629A400C46394 /* XWKWebViewDemo_macOS.entitlements */,
 			);
 			path = XWKWebViewDemo.macOS;
+			sourceTree = "<group>";
+		};
+		3EB2ADAA22164A3E00C46394 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EB2ADAB22164A6600C46394 /* dummy.txt */,
+				3EB2ADAC22164A6600C46394 /* index.html */,
+				3EB2ADAD22164A6600C46394 /* main.js */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3EB2ADB122164A7400C46394 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				3EB2ADB222164A9200C46394 /* LocalFilePlugin.swift */,
+				3EB2ADB822164B3D00C46394 /* AnotherPlugin.swift */,
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
+		3EB2ADB422164AB600C46394 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EB2ADB522164AB600C46394 /* XWKWebView.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,6 +116,7 @@
 				3EB2AD7A221629A300C46394 /* Sources */,
 				3EB2AD7B221629A300C46394 /* Frameworks */,
 				3EB2AD7C221629A300C46394 /* Resources */,
+				3EB2ADB722164AC200C46394 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -95,6 +139,11 @@
 				TargetAttributes = {
 					3EB2AD7D221629A300C46394 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -122,11 +171,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EB2AD86221629A400C46394 /* Assets.xcassets in Resources */,
+				3EB2ADAF22164A6600C46394 /* index.html in Resources */,
+				3EB2ADAE22164A6600C46394 /* dummy.txt in Resources */,
 				3EB2AD89221629A400C46394 /* Main.storyboard in Resources */,
+				3EB2ADB022164A6600C46394 /* main.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3EB2ADB722164AC200C46394 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/XWKWebView.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XWKWebView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3EB2AD7A221629A300C46394 /* Sources */ = {
@@ -135,6 +210,8 @@
 			files = (
 				3EB2AD84221629A300C46394 /* ViewController.swift in Sources */,
 				3EB2AD82221629A300C46394 /* AppDelegate.swift in Sources */,
+				3EB2ADB922164B3D00C46394 /* AnotherPlugin.swift in Sources */,
+				3EB2ADB322164A9200C46394 /* LocalFilePlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,15 +348,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = XWKWebViewDemo.macOS/XWKWebViewDemo_macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2PK47M46JY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = XWKWebViewDemo.macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.plu.XWKWebViewDemo-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -290,15 +371,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = XWKWebViewDemo.macOS/XWKWebViewDemo_macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2PK47M46JY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = XWKWebViewDemo.macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.plu.XWKWebViewDemo-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

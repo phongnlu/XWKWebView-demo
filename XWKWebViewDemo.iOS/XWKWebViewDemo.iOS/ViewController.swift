@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let webView = WKWebView(frame: view.frame, configuration: WKWebViewConfiguration())
-        webView.scrollView.bounces = false
         view.addSubview(webView)
         
         // Uncomment this to test loading html from local
@@ -32,7 +31,5 @@ class ViewController: UIViewController {
         xwebview.registerPlugin(LocalFilePlugin(), namespace: "localFilePlugin")
         xwebview.registerPlugin(AnotherPlugin(), namespace: "anotherPlugin")
     }
-
-
 }
 
