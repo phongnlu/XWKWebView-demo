@@ -1,0 +1,12 @@
+{
+  "name": "dummy-website",
+  "version": "0.0.1",
+  "description": "A dummy webapp",
+  "author": "phong lu",
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  },
+  "scripts": {
+    "dev": "live-server --port=8888 --cors"
+  }
+}

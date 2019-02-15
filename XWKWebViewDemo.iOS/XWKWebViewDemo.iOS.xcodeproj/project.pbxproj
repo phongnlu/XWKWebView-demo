@@ -12,6 +12,10 @@
 		3EB2AD692216294B00C46394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2AD672216294B00C46394 /* Main.storyboard */; };
 		3EB2AD6B2216294C00C46394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2AD6A2216294C00C46394 /* Assets.xcassets */; };
 		3EB2AD6E2216294C00C46394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2AD6C2216294C00C46394 /* LaunchScreen.storyboard */; };
+		3EB2AD9322162CF500C46394 /* XWKWebView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB2AD9222162CF500C46394 /* XWKWebView.framework */; };
+		3EB2AD99221636C900C46394 /* LocalFilePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB2AD98221636C900C46394 /* LocalFilePlugin.swift */; };
+		3EB2AD9B2216374500C46394 /* dummy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2AD9A2216374500C46394 /* dummy.txt */; };
+		3EB2AD9D2216428400C46394 /* AnotherPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB2AD9C2216428400C46394 /* AnotherPlugin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		3EB2AD6A2216294C00C46394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EB2AD6D2216294C00C46394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EB2AD6F2216294C00C46394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EB2AD9222162CF500C46394 /* XWKWebView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XWKWebView.framework; path = Carthage/Build/iOS/XWKWebView.framework; sourceTree = "<group>"; };
+		3EB2AD98221636C900C46394 /* LocalFilePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFilePlugin.swift; sourceTree = "<group>"; };
+		3EB2AD9A2216374500C46394 /* dummy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dummy.txt; sourceTree = "<group>"; };
+		3EB2AD9C2216428400C46394 /* AnotherPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherPlugin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EB2AD9322162CF500C46394 /* XWKWebView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,7 @@
 			children = (
 				3EB2AD622216294B00C46394 /* XWKWebViewDemo.iOS */,
 				3EB2AD612216294B00C46394 /* Products */,
+				3EB2AD9122162CF500C46394 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +64,8 @@
 		3EB2AD622216294B00C46394 /* XWKWebViewDemo.iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3EB2AD9A2216374500C46394 /* dummy.txt */,
+				3EB2AD9522162E2700C46394 /* Plugins */,
 				3EB2AD632216294B00C46394 /* AppDelegate.swift */,
 				3EB2AD652216294B00C46394 /* ViewController.swift */,
 				3EB2AD672216294B00C46394 /* Main.storyboard */,
@@ -62,6 +74,23 @@
 				3EB2AD6F2216294C00C46394 /* Info.plist */,
 			);
 			path = XWKWebViewDemo.iOS;
+			sourceTree = "<group>";
+		};
+		3EB2AD9122162CF500C46394 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EB2AD9222162CF500C46394 /* XWKWebView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3EB2AD9522162E2700C46394 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				3EB2AD98221636C900C46394 /* LocalFilePlugin.swift */,
+				3EB2AD9C2216428400C46394 /* AnotherPlugin.swift */,
+			);
+			path = Plugins;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +103,7 @@
 				3EB2AD5C2216294B00C46394 /* Sources */,
 				3EB2AD5D2216294B00C46394 /* Frameworks */,
 				3EB2AD5E2216294B00C46394 /* Resources */,
+				3EB2AD9422162CFF00C46394 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -125,10 +155,34 @@
 				3EB2AD6E2216294C00C46394 /* LaunchScreen.storyboard in Resources */,
 				3EB2AD6B2216294C00C46394 /* Assets.xcassets in Resources */,
 				3EB2AD692216294B00C46394 /* Main.storyboard in Resources */,
+				3EB2AD9B2216374500C46394 /* dummy.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3EB2AD9422162CFF00C46394 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/XWKWebView.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XWKWebView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3EB2AD5C2216294B00C46394 /* Sources */ = {
@@ -136,7 +190,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EB2AD662216294B00C46394 /* ViewController.swift in Sources */,
+				3EB2AD99221636C900C46394 /* LocalFilePlugin.swift in Sources */,
 				3EB2AD642216294B00C46394 /* AppDelegate.swift in Sources */,
+				3EB2AD9D2216428400C46394 /* AnotherPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +340,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PK47M46JY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = XWKWebViewDemo.iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +362,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PK47M46JY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = XWKWebViewDemo.iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

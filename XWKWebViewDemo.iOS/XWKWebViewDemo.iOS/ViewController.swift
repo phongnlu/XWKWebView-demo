@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import WebKit
+import XWKWebView
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let webView = WKWebView(frame: view.frame, configuration: WKWebViewConfiguration())
+        webView.scrollView.bounces = false
+        view.addSubview(webView)
+        
+        webView.load(URLRequest(url: URL(string: "http://127.0.0.1:8888/index.html")!))
+        
+        let xwebview = XWKWebView(webView);
+        xwebview.registerPlugin(LocalFilePlugin(), namespace: "localFilePlugin")
+        xwebview.registerPlugin(AnotherPlugin(), namespace: "anotherPlugin")
     }
 
 
