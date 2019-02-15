@@ -14,8 +14,10 @@
 		3EB2AD6E2216294C00C46394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2AD6C2216294C00C46394 /* LaunchScreen.storyboard */; };
 		3EB2AD9322162CF500C46394 /* XWKWebView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB2AD9222162CF500C46394 /* XWKWebView.framework */; };
 		3EB2AD99221636C900C46394 /* LocalFilePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB2AD98221636C900C46394 /* LocalFilePlugin.swift */; };
-		3EB2AD9B2216374500C46394 /* dummy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2AD9A2216374500C46394 /* dummy.txt */; };
 		3EB2AD9D2216428400C46394 /* AnotherPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB2AD9C2216428400C46394 /* AnotherPlugin.swift */; };
+		3EB2ADA62216474200C46394 /* dummy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2ADA42216474200C46394 /* dummy.txt */; };
+		3EB2ADA72216474200C46394 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2ADA52216474200C46394 /* index.html */; };
+		3EB2ADA9221648C400C46394 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 3EB2ADA8221648C400C46394 /* main.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +30,10 @@
 		3EB2AD6F2216294C00C46394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EB2AD9222162CF500C46394 /* XWKWebView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XWKWebView.framework; path = Carthage/Build/iOS/XWKWebView.framework; sourceTree = "<group>"; };
 		3EB2AD98221636C900C46394 /* LocalFilePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFilePlugin.swift; sourceTree = "<group>"; };
-		3EB2AD9A2216374500C46394 /* dummy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dummy.txt; sourceTree = "<group>"; };
 		3EB2AD9C2216428400C46394 /* AnotherPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherPlugin.swift; sourceTree = "<group>"; };
+		3EB2ADA42216474200C46394 /* dummy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dummy.txt; sourceTree = "<group>"; };
+		3EB2ADA52216474200C46394 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		3EB2ADA8221648C400C46394 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +68,7 @@
 		3EB2AD622216294B00C46394 /* XWKWebViewDemo.iOS */ = {
 			isa = PBXGroup;
 			children = (
-				3EB2AD9A2216374500C46394 /* dummy.txt */,
+				3EB2ADA32216470600C46394 /* Supporting Files */,
 				3EB2AD9522162E2700C46394 /* Plugins */,
 				3EB2AD632216294B00C46394 /* AppDelegate.swift */,
 				3EB2AD652216294B00C46394 /* ViewController.swift */,
@@ -91,6 +95,16 @@
 				3EB2AD9C2216428400C46394 /* AnotherPlugin.swift */,
 			);
 			path = Plugins;
+			sourceTree = "<group>";
+		};
+		3EB2ADA32216470600C46394 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EB2ADA8221648C400C46394 /* main.js */,
+				3EB2ADA42216474200C46394 /* dummy.txt */,
+				3EB2ADA52216474200C46394 /* index.html */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,10 +166,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EB2ADA72216474200C46394 /* index.html in Resources */,
 				3EB2AD6E2216294C00C46394 /* LaunchScreen.storyboard in Resources */,
 				3EB2AD6B2216294C00C46394 /* Assets.xcassets in Resources */,
+				3EB2ADA9221648C400C46394 /* main.js in Resources */,
 				3EB2AD692216294B00C46394 /* Main.storyboard in Resources */,
-				3EB2AD9B2216374500C46394 /* dummy.txt in Resources */,
+				3EB2ADA62216474200C46394 /* dummy.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

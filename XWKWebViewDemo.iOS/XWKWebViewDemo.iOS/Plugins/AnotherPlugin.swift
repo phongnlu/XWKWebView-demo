@@ -12,7 +12,7 @@ import XWKWebView
 public class AnotherPlugin: NSObject {
     @objc func delay(_ payload: AnyObject?, _ promise: XWKWebViewPromise) {
         print("AnotherPlugin delay payload: \(payload)")
-        print("Delaying...")
+        print("Delaying 5s...")
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             print("getOSInfo: \(self.getOSInfo())")
             promise.resolve("{\"data\": \" OS Info: \(self.getOSInfo()) \"}")

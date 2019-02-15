@@ -20,7 +20,13 @@ class ViewController: UIViewController {
         webView.scrollView.bounces = false
         view.addSubview(webView)
         
-        webView.load(URLRequest(url: URL(string: "http://127.0.0.1:8888/index.html")!))
+        // Uncomment this to test loading html from local
+        /*if let url = Bundle.main.url(forResource: "index", withExtension: "html") {
+         webView.loadFileURL(url, allowingReadAccessTo: Bundle.main.resourceURL!)
+         }*/
+        
+        // Uncomment this to test loading html from remote
+        webView.load(URLRequest(url: URL(string: "http://127.0.0.1:8888/index.html")!))        
         
         let xwebview = XWKWebView(webView);
         xwebview.registerPlugin(LocalFilePlugin(), namespace: "localFilePlugin")
