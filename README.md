@@ -22,4 +22,7 @@ To run remote webapp
 ```cmd
 > cd website
 > npm i
+> npm run dev
 ```
+
+The website can be found at http://127.0.0.1:8888/index.html
