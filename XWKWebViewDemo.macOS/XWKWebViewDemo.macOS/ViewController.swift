@@ -48,10 +48,10 @@ class ViewController: NSViewController {
         xwebview?.invokeJs("window.invokeFromNative(\"\(nativePayload)\")",
             onSuccess: { payload in
                 print("invokeJs onSuccess payload: \(payload)")
-        },
+            },
             onFailure: { error in
                 print("invokeJs onFailure error: \(error)")
-        })
+            })
     }
 
     override var representedObject: Any? {
