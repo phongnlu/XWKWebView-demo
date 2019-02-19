@@ -43,7 +43,7 @@ class ViewController: NSViewController {
     
     @objc func invokeJsBtnClicked() {
         let anotherPlugin = AnotherPlugin()
-        let nativePayload = "native payload - iOS info: \(anotherPlugin.getOSInfo())"
+        let nativePayload = "native payload - macOS info: \(anotherPlugin.getOSInfo())"
         
         xwebview?.invokeJs("window.invokeFromNative(\"\(nativePayload)\")",
             onSuccess: { payload in
