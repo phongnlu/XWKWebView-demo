@@ -12,13 +12,17 @@ import XWKWebView
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var invokeJsBtn: NSButton!
+    
+    private var xwebview: XWKWebView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        view.window?.setFrame(NSRect(x:0, y:0, width: 800, height: 600), display: true) 
-        let webView = WKWebView(frame: view.frame, configuration: WKWebViewConfiguration())
+        view.window?.setFrame(NSRect(x:0, y:0, width: 800, height: 600), display: true)
+        let webView = WKWebView(frame: NSRect(x: 0, y: 60, width: 800, height: 540), configuration: WKWebViewConfiguration())
         view.addSubview(webView)
         
         // Uncomment this to test loading html from local
@@ -29,9 +33,25 @@ class ViewController: NSViewController {
         // Uncomment this to test loading html from remote
         webView.load(URLRequest(url: URL(string: "http://127.0.0.1:8888/index.html")!))
         
-        let xwebview = XWKWebView(webView);
-        xwebview.registerPlugin(LocalFilePlugin(), namespace: "localFilePlugin")
-        xwebview.registerPlugin(AnotherPlugin(), namespace: "anotherPlugin")
+        xwebview = XWKWebView(webView);
+        xwebview?.registerPlugin(LocalFilePlugin(), namespace: "localFilePlugin")
+        xwebview?.registerPlugin(AnotherPlugin(), namespace: "anotherPlugin")
+        
+        invokeJsBtn.target = self
+        invokeJsBtn.action = #selector(self.invokeJsBtnClicked)
+    }
+    
+    @objc func invokeJsBtnClicked() {
+        let anotherPlugin = AnotherPlugin()
+        let nativePayload = "native payload - iOS info: \(anotherPlugin.getOSInfo())"
+        
+        xwebview?.invokeJs("invokeFromNative(\"\(nativePayload)\")",
+            onSuccess: { payload in
+                print("invokeJs onSuccess payload: \(payload)")
+        },
+            onFailure: { error in
+                print("invokeJs onFailure error: \(error)")
+        })
     }
 
     override var representedObject: Any? {

@@ -12,11 +12,15 @@ import XWKWebView
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var invokeJsBtn: UIButton!
+    
+    private var xwebview: XWKWebView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let webView = WKWebView(frame: view.frame, configuration: WKWebViewConfiguration())
+        let webView = WKWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 100), configuration: WKWebViewConfiguration())
         view.addSubview(webView)
         
         // Uncomment this to test loading html from local
@@ -27,9 +31,24 @@ class ViewController: UIViewController {
         // Uncomment this to test loading html from remote
         webView.load(URLRequest(url: URL(string: "http://127.0.0.1:8888/index.html")!))        
         
-        let xwebview = XWKWebView(webView);
-        xwebview.registerPlugin(LocalFilePlugin(), namespace: "localFilePlugin")
-        xwebview.registerPlugin(AnotherPlugin(), namespace: "anotherPlugin")
+        xwebview = XWKWebView(webView);
+        xwebview?.registerPlugin(LocalFilePlugin(), namespace: "localFilePlugin")
+        xwebview?.registerPlugin(AnotherPlugin(), namespace: "anotherPlugin")
+        
+        invokeJsBtn.addTarget(self, action: #selector(self.invokeJsBtnClicked), for: .touchUpInside)
+    }
+    
+    @objc func invokeJsBtnClicked(_ sender:UIButton!) {
+        let anotherPlugin = AnotherPlugin()
+        let nativePayload = "native payload - iOS info: \(anotherPlugin.getOSInfo())"
+        
+        xwebview?.invokeJs("invokeFromNative(\"\(nativePayload)\")",
+            onSuccess: { payload in
+                print("invokeJs onSuccess payload: \(payload)")
+            },
+            onFailure: { error in
+                print("invokeJs onFailure error: \(error)")
+            })
     }
 }
 
