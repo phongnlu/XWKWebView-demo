@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         let anotherPlugin = AnotherPlugin()
         let nativePayload = "native payload - iOS info: \(anotherPlugin.getOSInfo())"
         
-        xwebview?.invokeJs("invokeFromNative(\"\(nativePayload)\")",
+        xwebview?.invokeJs("window.invokeFromNative(\"\(nativePayload)\")",
             onSuccess: { payload in
                 print("invokeJs onSuccess payload: \(payload)")
             },
